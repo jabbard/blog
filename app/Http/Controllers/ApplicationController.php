@@ -6,15 +6,24 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
+    protected $data=[];
+
+    public function __construct()
+    {
+        $this->data['title'] = "Blog";
+    }
+
     public function index(){
-        return view('home');
+        $this->data['title']="Home";
+        return view('home',$this->data);
     }
 
     public function about(){
-        return view('about');
+        $this->data['title']="About";
+        return view('about',$this->data);
     }
 
     public function contact(){
-        return view('contact');
+        return view('contact',$this->data);
     }
 }
