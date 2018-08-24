@@ -18,3 +18,5 @@ Route::get('/home','ApplicationController@index')->name('home');
 Route::get('/about','ApplicationController@about')->name('about');
 
 Route::get('/contact','ApplicationController@contact')->name('contact');
+
+Route::any('/add', 'ApplicationController@addUser')->name('add');
